@@ -6,7 +6,7 @@ resource "aws_vpc" "this" {
   tags = merge(
     var.tags,
     {
-      Name = "vpc-${var.vpc_name}-tf"
+      Name = "vpc-${var.project_name}-tf"
     }
   )
 }
@@ -20,7 +20,7 @@ resource "aws_subnet" "public" {
   tags = merge(
     var.tags,
     {
-      Name = "vpc-${var.vpc_name}-subnet-tf"
+      Name = "vpc-${var.project_name}-subnet-tf"
     }
   )
 }
@@ -31,7 +31,7 @@ resource "aws_internet_gateway" "this" {
   tags = merge(
     var.tags,
     {
-      Name = "vpc-${var.vpc_name}-igw-tf"
+      Name = "vpc-${var.project_name}-igw-tf"
     }
   )
 }
@@ -47,7 +47,7 @@ resource "aws_route_table" "public" {
   tags = merge(
     var.tags,
     {
-      Name = "vpc-${var.vpc_name}-rt-tf"
+      Name = "vpc-${var.project_name}-rt-tf"
     }
   )
 }

@@ -25,9 +25,3 @@ variable "availability_zone" {
   description = "Zona de disponibilidade da subnet"
   default     = "us-east-1a"
 }
-
-variable "vpc_name" {
-  type        = string
-  description = "Nome da VPC e seus recursos"
-  default     = "vpc-modular"
-}
