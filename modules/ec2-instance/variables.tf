@@ -23,8 +23,3 @@ variable "subnet_id" {
   type        = string
   description = "ID da subnet onde a instância será lançada"
 }
-
-variable "instance_name" {
-  type        = string
-  description = "Nome da instância (tag)"
-}
