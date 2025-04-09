@@ -1,20 +1,10 @@
-variable "project_name" {
-  type        = string
-  description = "Project Name to be used to name the resources (tags)"
-}
-
-variable "tags" {
-  type        = map(any)
-  description = "Tags to be added to AWS Resources"
-}
-
 variable "name" {
   type = string
 }
 
 variable "description" {
-  type = string
-  default = "Security Group"
+  type    = string
+  default = "SG padrão"
 }
 
 variable "vpc_id" {

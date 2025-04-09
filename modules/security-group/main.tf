@@ -23,10 +23,7 @@ resource "aws_security_group" "this" {
     }
   }
 
-  tags = merge(
-    var.tags,
-    {
-      Name = "sg-${var.project_name}-tf"
-    }
-  )
+  tags = {
+    Name = var.name
+  }
 }
