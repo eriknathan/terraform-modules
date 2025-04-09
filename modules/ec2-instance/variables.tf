@@ -8,6 +8,11 @@ variable "tags" {
   description = "Tags to be added to AWS Resources"
 }
 
+variable "security_group_ids" {
+  type        = list(string)
+  description = "Lista de IDs de security groups"
+}
+
 variable "ami_id" {
   type        = string
   description = "AMI ID da instância EC2"
