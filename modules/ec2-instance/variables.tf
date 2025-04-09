@@ -10,7 +10,8 @@ variable "tags" {
 
 variable "security_group_ids" {
   type        = list(string)
-  description = "Lista de IDs de security groups"
+  description = "Lista de IDs dos Security Groups para associar à EC2"
+  default     = []
 }
 
 variable "ami_id" {
