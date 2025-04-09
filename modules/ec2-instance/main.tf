@@ -1,10 +1,12 @@
 resource "aws_instance" "this" {
-  ami                    = var.ami_id
-  instance_type          = var.instance_type
-  subnet_id              = var.subnet_id
-  vpc_security_group_ids = var.security_group_ids
+  ami           = var.ami_id
+  instance_type = var.instance_type
+  subnet_id     = var.subnet_id
 
-  tags = {
-    Name = var.instance_name
-  }
+  tags = merge(
+    var.tags,
+    {
+      Name = "ec2-${var.project_name}-tf"
+    }
+  )
 }

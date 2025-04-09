@@ -3,9 +3,12 @@ resource "aws_vpc" "this" {
   enable_dns_support   = true
   enable_dns_hostnames = true
 
-  tags = {
-    Name = var.vpc_name
-  }
+  tags = merge(
+    var.tags,
+    {
+      Name = "vpc-${var.project_name}-tf"
+    }
+  )
 }
 
 resource "aws_subnet" "public" {
@@ -14,17 +17,23 @@ resource "aws_subnet" "public" {
   availability_zone       = var.availability_zone
   map_public_ip_on_launch = true
 
-  tags = {
-    Name = "${var.vpc_name}-subnet"
-  }
+  tags = merge(
+    var.tags,
+    {
+      Name = "vpc-${var.project_name}-subnet-tf"
+    }
+  )
 }
 
 resource "aws_internet_gateway" "this" {
   vpc_id = aws_vpc.this.id
 
-  tags = {
-    Name = "${var.vpc_name}-igw"
-  }
+  tags = merge(
+    var.tags,
+    {
+      Name = "vpc-${var.project_name}-igw-tf"
+    }
+  )
 }
 
 resource "aws_route_table" "public" {
@@ -35,9 +44,12 @@ resource "aws_route_table" "public" {
     gateway_id = aws_internet_gateway.this.id
   }
 
-  tags = {
-    Name = "${var.vpc_name}-rt"
-  }
+  tags = merge(
+    var.tags,
+    {
+      Name = "vpc-${var.project_name}-rt-tf"
+    }
+  )
 }
 
 resource "aws_route_table_association" "public" {
