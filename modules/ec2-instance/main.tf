@@ -3,6 +3,11 @@ resource "aws_instance" "this" {
   instance_type = var.instance_type
   subnet_id     = var.subnet_id
 
+  root_block_device {
+    volume_size = var.disk_size
+    volume_type = "gp3"
+  }
+
   tags = merge(
     var.tags,
     {

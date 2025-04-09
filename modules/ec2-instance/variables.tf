@@ -23,3 +23,8 @@ variable "subnet_id" {
   type        = string
   description = "ID da subnet onde a instância será lançada"
 }
+
+variable "disk_size" {
+  type = number
+  description = "Tamanho do disco referente a EC2"
+}
