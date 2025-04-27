@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "bucket" {
-  bucket = "s3-bucket-${var.project_name}-tf"
+  bucket = var.nome_bucket
   acl    = "private"
 
   tags = merge(

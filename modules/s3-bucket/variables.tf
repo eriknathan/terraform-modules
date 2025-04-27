@@ -7,3 +7,8 @@ variable "tags" {
   type        = map(any)
   description = "Tags to be added to AWS Resources"
 }
+
+variable "nome_bucket" {
+  type        = string
+  description = "Nome do Bucket S3 que será criado. Deve ser único globalmente na AWS."
+}
