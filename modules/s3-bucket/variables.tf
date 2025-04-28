@@ -8,7 +8,7 @@ variable "tags" {
   description = "Tags to be added to AWS Resources"
 }
 
-variable "nome_bucket" {
+variable "bucket_name" {
   type        = string
   description = "Nome do Bucket S3 que será criado. Deve ser único globalmente na AWS."
 }
